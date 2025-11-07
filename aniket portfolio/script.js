@@ -290,7 +290,8 @@ document.querySelectorAll('.project-card').forEach(card => {
 // Console message for curious developers
 console.log('%c🔒 Cybersecurity Developer Portfolio', 'color: #00f7ff; font-size: 20px; font-weight: bold;');
 console.log('%c👋 Hey there! Interested in the code? Check out my GitHub!', 'color: #7c3aed; font-size: 14px;');
-console.log('%c🔗 https://github.com/Aniket-Rai-afk/Portfolio', 'color: #00f7ff; font-size: 14px;');
+console.log('%c🔗 https://github.com/Aniket-Rai-afk/Aniket-Portfolio', 'color: #00f7ff; font-size: 14px;');
+
 
 // Performance optimization: Lazy load images if any are added
 if ('IntersectionObserver' in window) {
@@ -348,3 +349,4 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.opacity = '1';
   });
 });
+
