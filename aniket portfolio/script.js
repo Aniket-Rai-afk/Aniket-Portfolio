@@ -1,27 +1,52 @@
+// Custom Cursor Logic
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+
+window.addEventListener('mousemove', (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    // Dot matches cursor position instantly
+    if (cursorDot) {
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+    }
+
+    // Outline follows with delay
+    if (cursorOutline) {
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    }
+});
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
     });
 });
 
 // Typing Animation
 const typingText = document.querySelector('.typing-text');
 const roles = [
-    'Cybersecurity Analyst',
+    'Cybersecurity Engineer',
+    'Security Operations Analyst',
     'Full-Stack Developer',
-    'Python Developer',
-    'Security Automation Engineer',
     'Ethical Hacker',
-    'Network Security Specialist'
+    'DevSecOps Enthusiast'
 ];
 
 let roleIndex = 0;
@@ -30,8 +55,10 @@ let isDeleting = false;
 let typingSpeed = 100;
 
 function typeRole() {
+    if (!typingText) return;
+
     const currentRole = roles[roleIndex];
-    
+
     if (isDeleting) {
         typingText.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
@@ -57,170 +84,31 @@ function typeRole() {
 // Start typing animation
 typeRole();
 
-// Smooth Scroll with Offset for Fixed Navbar
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
 // Navbar Background on Scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10, 10, 15, 0.98)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 247, 255, 0.1)';
+        navbar.style.background = 'rgba(2, 6, 23, 0.95)';
+        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
     } else {
-        navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+        navbar.style.background = 'rgba(2, 6, 23, 0.6)';
         navbar.style.boxShadow = 'none';
     }
 });
 
-// Scroll Reveal Animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Animate elements on scroll
-document.querySelectorAll('.skill-category, .project-card, .timeline-item, .cert-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
+// Hero Parallax
+window.addEventListener('scroll', () => {
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent && window.innerWidth > 768) {
+        const scrolled = window.scrollY;
+        heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+        heroContent.style.opacity = 1 - (scrolled / 700);
+    }
 });
 
-// ===== Modal Functionality (Experience + Projects) =====
-const modals = {};
-['coal-india','yhills','vit-stellar','malware',
- 'ceh','powerbi','prod-mgmt','risk-mgmt'
-].forEach(key => {
-  const el = document.getElementById(`${key}-modal`);
-  if (el) modals[key] = el;
-});
-
-
-function openModal(modal) {
-  if (!modal) return;
-  modal.style.display = 'block';
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(modal) {
-  if (!modal) return;
-  modal.style.display = 'none';
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = 'auto';
-}
-
-// Open from timeline cards (experience)
-document.querySelectorAll('.timeline-item').forEach(item => {
-  const key = item.getAttribute('data-modal');
-  const modal = modals[key];
-  if (!modal) return;
-
-  item.addEventListener('click', () => openModal(modal));
-  const btn = item.querySelector('.view-details-btn');
-  if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); openModal(modal); });
-});
-
-// Open from any button/link with data-open-modal (projects etc.)
-document.querySelectorAll('[data-open-modal]').forEach(btn => {
-  const key = btn.getAttribute('data-open-modal');
-  const modal = modals[key];
-  if (!modal) return;
-
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    openModal(modal);
-  });
-});
-
-// Close handlers
-Object.values(modals).forEach(modal => {
-  const closeBtn = modal.querySelector('.close');
-  if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal(modal);
-  });
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key !== 'Escape') return;
-  Object.values(modals).forEach(m => { if (m.style.display === 'block') closeModal(m); });
-});
-
-
-
-// EmailJS Integration for Contact Form
-// Initialize EmailJS with your public key
-(function() {
-    emailjs.init("3QNtVGYw7wuESBADB"); // Replace with your EmailJS public key
-})();
-
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Show loading state
-    formStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    formStatus.className = '';
-
-    // Get form data
-    const templateParams = {
-        from_name: document.getElementById('name').value,
-        from_email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
-        to_email: 'aniiket2004@gmail.com'
-    };
-
-    // Send email using EmailJS
-    emailjs.send("service_jch7z9a", "template_ket11md", templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.';
-            formStatus.className = 'success';
-            contactForm.reset();
-            
-            // Clear success message after 5 seconds
-            setTimeout(() => {
-                formStatus.innerHTML = '';
-            }, 5000);
-        }, function(error) {
-            console.log('FAILED...', error);
-            formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send message. Please try again or email me directly.';
-            formStatus.className = 'error';
-            
-            // Clear error message after 5 seconds
-            setTimeout(() => {
-                formStatus.innerHTML = '';
-            }, 5000);
-        });
-});
-
-// Add animation to stats on scroll
+// Stats Counter Animation
 const statsSection = document.querySelector('.hero-stats');
 let statsAnimated = false;
 
@@ -240,113 +128,141 @@ if (statsSection) {
 function animateStats() {
     const stats = document.querySelectorAll('.stat h3');
     stats.forEach(stat => {
-        const finalValue = stat.textContent;
-        const isPercentage = finalValue.includes('%');
-        const numericValue = parseInt(finalValue);
+        const originalText = stat.textContent;
+        const isK = originalText.toLowerCase().includes('k');
+        const numericValue = parseFloat(originalText.replace(/[^0-9.]/g, '')) * (isK ? 1000 : 1);
+
         let currentValue = 0;
-        const increment = numericValue / 50;
-        const duration = 1500;
-        const stepTime = duration / 50;
+        const duration = 2000;
+        const steps = 60;
+        const increment = numericValue / steps;
+        const stepTime = duration / steps;
 
         const counter = setInterval(() => {
             currentValue += increment;
+
+            let displayValue;
             if (currentValue >= numericValue) {
-                stat.textContent = finalValue;
+                displayValue = originalText;
                 clearInterval(counter);
             } else {
-                stat.textContent = Math.floor(currentValue) + (isPercentage ? '%' : '');
+                // Reformat
+                if (isK) {
+                    displayValue = (currentValue / 1000).toFixed(1) + 'k+';
+                } else {
+                    displayValue = Math.floor(currentValue) + '+';
+                }
             }
+            stat.textContent = displayValue;
         }, stepTime);
     });
 }
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    const heroShape = document.querySelector('.hero-shape');
-    
-    if (heroContent && window.innerWidth > 768) {
-        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-    
-    if (heroShape) {
-        heroShape.style.transform = `translateY(${scrolled * 0.5}px) scale(${1 + scrolled * 0.0005})`;
-    }
+// ===== Modal Functionality =====
+const modalIds = [
+    'thq', 'coal-india', 'yhills', 'vit-stellar',
+    'malware', 'ceh', 'powerbi', 'prod-mgmt', 'risk-mgmt'
+];
+
+const modals = {};
+modalIds.forEach(key => {
+    const el = document.getElementById(`${key}-modal`);
+    if (el) modals[key] = el;
 });
 
-// Add hover effect for project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
+function openModal(modal) {
+    if (!modal) return;
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modal) {
+    if (!modal) return;
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'auto';
+}
+
+// Open triggers
+document.querySelectorAll('[data-open-modal]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const key = trigger.getAttribute('data-open-modal');
+        if (modals[key]) openModal(modals[key]);
     });
 });
 
-// Console message for curious developers
-console.log('%c🔒 Cybersecurity Developer Portfolio', 'color: #00f7ff; font-size: 20px; font-weight: bold;');
-console.log('%c👋 Hey there! Interested in the code? Check out my GitHub!', 'color: #7c3aed; font-size: 14px;');
-console.log('%c🔗 https://github.com/Aniket-Rai-afk/Aniket-Portfolio', 'color: #00f7ff; font-size: 14px;');
+// Timeline triggers
+document.querySelectorAll('.timeline-content').forEach(item => {
+    item.addEventListener('click', () => {
+        const key = item.getAttribute('data-modal');
+        if (modals[key]) openModal(modals[key]);
+    });
+});
 
+// Close triggers
+document.querySelectorAll('.close').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const modal = this.closest('.modal');
+        closeModal(modal);
+    });
+});
 
-// Performance optimization: Lazy load images if any are added
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
-            }
+// Close on outside click
+window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        closeModal(e.target);
+    }
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        Object.values(modals).forEach(modal => {
+            if (modal.style.display === 'flex') closeModal(modal);
         });
-    });
+    }
+});
 
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
+
+// Initialization of EmailJS (Contact Form)
+// Replace with your keys if needed, keeping existing logic
+(function () {
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("3QNtVGYw7wuESBADB");
+    }
+})();
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+
+        const templateParams = {
+            from_name: contactForm.querySelector('input[name="name"]').value,
+            from_email: contactForm.querySelector('input[name="email"]').value,
+            message: contactForm.querySelector('textarea[name="message"]').value,
+            subject: 'Portfolio Contact'
+        };
+
+        emailjs.send("service_jch7z9a", "template_ket11md", templateParams)
+            .then(() => {
+                btn.textContent = 'Sent Successfully!';
+                btn.style.background = '#10b981';
+                contactForm.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = ''; // reset
+                }, 3000);
+            })
+            .catch((err) => {
+                console.error('Failed:', err);
+                btn.textContent = 'Failed. Try again.';
+                btn.style.background = '#ef4444';
+            });
     });
 }
-// ===== Smooth Delayed Cursor (Centered Fix) =====
-document.addEventListener('DOMContentLoaded', () => {
-  const cursor = document.querySelector('.cursor-dot');
-  if (!cursor) return;
-
-  let mouseX = 0;
-  let mouseY = 0;
-  let dotX = 0;
-  let dotY = 0;
-  const delay = 0.15; // 0.1 = faster, 0.2 = slower follow
-
-  // Track actual mouse position
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Animation loop for smooth delayed follow
-  function animate() {
-    // interpolate between current dot pos and mouse pos
-    dotX += (mouseX - dotX) * delay;
-    dotY += (mouseY - dotY) * delay;
-
-    // directly position it centered on the cursor
-    cursor.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  // Fade when cursor leaves the page
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-  });
-});
-

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Blog — Aniket Rai</title>
+    <meta name="description"
+        content="Technical deep-dives on cybersecurity, networking, and engineering by Aniket Rai.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css"> <!-- Import base styles for nav but override -->
+    <link rel="stylesheet" href="blog.css"> <!-- Specific Blog Styles -->
+</head>
+
+<body class="blog-page">
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="Aniket Rai" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a class="nav-link" href="index.html#about">About</a></li>
+                    <li><a class="nav-link" href="index.html#projects">Projects</a></li>
+                    <li><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="blog-container">
+        <div class="blog-header">
+            <h1 class="blog-title">Engineering Logs</h1>
+            <p class="blog-intro">
+                I write to deconstruct complex systems. Here you’ll find deep-dives into
+                <strong>cybersecurity incidents</strong>, <strong>network protocols</strong>, and
+                <strong>DevSecOps</strong> architecture—simplified for engineers, not bots.
+            </p>
+        </div>
+
+        <section class="blog-controls">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search articles...">
+            </div>
+            <div id="tags-filter" class="tags-filter">
+                <!-- Tags injected via JS -->
+            </div>
+        </section>
+
+        <section id="blog-list" class="blog-list">
+            <!-- Posts injected via JS -->
+            <div class="loading">Loading articles...</div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Aniket Rai. <a href="index.html">Back to Portfolio</a></p>
+    </footer>
+
+    <script src="blog.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Mobile Toggle (Reuse logic)
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

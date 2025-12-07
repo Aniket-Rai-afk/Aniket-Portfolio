@@ -1,34 +1,62 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <link rel="icon" href="assets/favicon.ico">
+  <!-- ===== META & SEO OPTIMIZATION ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aniket Rai • Cybersecurity & Full-Stack</title>
-  <meta name="description" content="Portfolio of Aniket Rai — Cybersecurity Analyst & Full-Stack Developer." />
-  <link rel="icon" href="assets/favicon.ico" />
+  <!-- Primary Meta Tags -->
+  <title>Aniket Rai — Cybersecurity Engineer & Full-Stack Developer</title>
+  <meta name="title" content="Aniket Rai — Cybersecurity Engineer & Full-Stack Developer">
+  <meta name="description"
+    content="Security-focused developer and network analyst passionate about building secure, scalable systems, automating defenses, and leading with impact.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Aniket Rai • Cybersecurity & Full-Stack" />
-  <meta property="og:description" content="Projects, experience, certifications and contact." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-image.jpg" />
+  <!-- Keywords -->
+  <meta name="keywords"
+    content="Aniket Rai, Cybersecurity Engineer, Full Stack Developer, Networking, Java, Python, DevSecOps, Portfolio, Security Automation">
+  <meta name="author" content="Aniket Rai">
 
-  <!-- Font Awesome (icons used across the site) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aniket-rai-portfolio.netlify.app/">
+  <meta property="og:title" content="Aniket Rai — Cybersecurity Engineer & Full-Stack Developer">
+  <meta property="og:description" content="Secure systems, smart automation, and resilient engineering.">
+  <meta property="og:image" content="assets/profile.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://aniket-rai-portfolio.netlify.app/">
+  <meta property="twitter:title" content="Aniket Rai — Cybersecurity Engineer & Full-Stack Developer">
+  <meta property="twitter:description"
+    content="Security engineer, developer, and leader building scalable, secure systems.">
+  <meta property="twitter:image" content="assets/profile.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- Google Fonts: Outfit (Heading) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
     <div class="nav-container">
       <a href="#top" class="nav-logo">
-  <img src="assets/logo.png" alt="Aniket Rai Logo" class="logo-img">
-</a>
-
+        <img src="assets/logo.png" alt="Aniket Rai" class="logo-img">
+      </a>
 
       <nav>
         <ul class="nav-menu">
@@ -36,8 +64,10 @@
           <li><a class="nav-link" href="#fundamentals">Skills</a></li>
           <li><a class="nav-link" href="#projects">Projects</a></li>
           <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="blog.html">Blog</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
-          <li><a class="nav-link" href="assets/Aniket_Rai_Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+          <li><a class="nav-link btn-resume" href="assets/Aniket_Rai_Resume.pdf" target="_blank"
+              rel="noopener">Resume</a></li>
         </ul>
       </nav>
 
@@ -47,650 +77,477 @@
     </div>
   </header>
 
-  <!-- Hero -->
-<!-- Hero -->
-<section id="top" class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Hi, I'm Aniket Rai</h1>
-    <p class="hero-subtitle">
-      <span class="typing-text">Cybersecurity Engineer</span>
-    </p>
-    <p class="hero-description">
-      Security-focused developer and network analyst passionate about building 
-      <strong>secure-by-design systems</strong>, automating defenses, and creating 
-      solutions that scale with reliability and purpose.
-    </p>
-
-    <div class="hero-stats">
-      <div class="stat">
-        <h3>10,000+</h3>
-        <p>Malware Samples Analyzed</p>
-      </div>
-      <div class="stat">
-        <h3>4+</h3>
-        <p>Major Security Projects</p>
-      </div>
-      <div class="stat">
-        <h3>20%</h3>
-        <p>Network Optimization Achieved</p>
-      </div>
-      <div class="stat">
-        <h3>1500+</h3>
-        <p>Members Led @ VIT-Stellar</p>
-      </div>
-    </div>
-
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Contact Me</a>
-    </div>
-  </div>
-
-  <div class="hero-image">
-    <div class="hero-shape"></div>
-    <img src="assets/profile.png" alt="Aniket Rai" class="profile-pic" loading="lazy">
-  </div>
-</section>
-
-
-  <!-- About -->
-<section id="about" class="about">
-  <h2 class="section-title">About Me</h2>
-  <div class="about-content">
-    <div class="about-text">
-      <p>
-        I’m an adaptable and detail-driven <strong>Security Engineer</strong> and <strong>Full-Stack Developer</strong> passionate about building secure, scalable, and efficient systems. With strong expertise in <strong>Java, Python, and Networking</strong>, I bridge the gap between development, security, and product thinking to craft solutions that are both reliable and resilient.
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <div class="hero-content reveal">
+      <div class="badge">Open to Work</div>
+      <h1 class="hero-title">Hello, I'm <span class="gradient-text">Aniket Rai</span></h1>
+      <p class="hero-subtitle">
+        <span class="typing-text">Cybersecurity Engineer</span>
       </p>
-      <p>
-        From analyzing malware using machine learning to optimizing networks and automating CI/CD pipelines, I love combining offensive-security insights with practical engineering to make technology safer, faster, and smarter.
-      </p>
-      <p>
-        As the <strong>Chairperson of VIT-Stellar</strong>, I’ve led 1500+ members, organized 40+ technical and outreach events, and mentored teams to turn ideas into impactful projects. I believe in leadership through collaboration, learning, and purpose-driven innovation.
-      </p>
-    </div>
-
-    <div class="about-highlights">
-      <div class="highlight-item">
-        <i class="fa-solid fa-shield-halved"></i>
-        <div>
-          <h4>Security Engineering</h4>
-          <p>Threat modeling, network defense, and vulnerability assessment with real-world attack simulations.</p>
-        </div>
-      </div>
-
-      <div class="highlight-item">
-        <i class="fa-solid fa-code"></i>
-        <div>
-          <h4>Full-Stack & Development</h4>
-          <p>Java, Python, React, Node.js, SQL, MongoDB — creating reliable systems with clean, secure code.</p>
-        </div>
-      </div>
-
-      <div class="highlight-item">
-        <i class="fa-solid fa-network-wired"></i>
-        <div>
-          <h4>Networking & Infrastructure</h4>
-          <p>Network optimization, performance tuning, and secure architecture design.</p>
-        </div>
-      </div>
-
-      <div class="highlight-item">
-        <i class="fa-solid fa-users-gear"></i>
-        <div>
-          <h4>Leadership & Product Thinking</h4>
-          <p>Strategic planning, cross-functional teamwork, and delivery of user-focused, scalable solutions.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- Projects -->
-  <section id="projects" class="projects">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <article class="project-card">
-        <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Anomaly Detection in Smart Home IoT Networks</h3>
-        <p>An online anomaly detection system for smart home IoT networks.</p>
-
-        <div class="project-tech">
-          <span>React</span><span>Node</span><span>JWT</span><span>PostgreSQL</span>
-        </div>
-
-        <div class="project-status">
-          <span class="status-badge ongoing">Ongoing</span>
-        </div>
-
-        <div class="project-metrics">
-          <span><i class="fa-regular fa-star"></i> hundreds of simulated IoT devices</span>
-          <!--<span><i class="fa-regular fa-clock"></i> Avg response &lt; 150ms</span>-->
-        </div>
-
-        <a class="project-link" href="https://github.com/Aniket-Rai-afk/Anomaly-Detection-in-Smart-Home-IoT-Networks" target="_blank" rel="noopener">
-          View Repo <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </article>
-<!-- Project 2 -->
-    <article class="project-card">
-      <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
-      <h3>File Integrity Checker — Security Monitoring Tool</h3>
-      <p>Developed a cross-platform monitoring tool using 9-point cryptographic checks for file system integrity, ensuring data reliability for over 50 users in a simulated network.</p>
-
-      <div class="project-tech">
-        <span>Bash</span><span>Shell</span><span>Linux</span>
-      </div>
-
-      <div class="project-metrics">
-        <span><i class="fa-regular fa-user"></i> 50+ simulated network users</span>
-        <span><i class="fa-regular fa-clock"></i> Manual audit time ↓ 70%</span>
-      </div>
-
-      <a class="project-link" href="https://github.com/Aniket-Rai-afk/PROACTIVE-DETECTION-OF-UNAUTHORIZED-SYSTEM-MODIFICATIONS-USING-INTEGRITY-CHECKING" target="_blank" rel="noopener">
-        View Project <i class="fa-solid fa-arrow-right"></i>
-      </a>
-    </article>
-
-    <!-- Project 3 -->
-    <article class="project-card">
-      <div class="project-icon"><i class="fa-solid fa-bug-slash"></i></div>
-      <h3>Malware Detection & Classification</h3>
-      <p>Built and optimized an ML model to detect and classify malware with 95% accuracy after analyzing 10 000 + samples, reducing false positives by 25%.</p>
-
-      <div class="project-tech">
-        <span>Python</span><span>scikit-learn</span><span>Machine Learning</span>
-      </div>
-
-      <div class="project-metrics">
-        <span><i class="fa-regular fa-star"></i> 95% classification accuracy</span>
-        <span><i class="fa-solid fa-database"></i> 10 000+ samples analyzed</span>
-        <span><i class="fa-solid fa-gauge-high"></i> Detection speed ↑ 40%</span>
-      </div>
-
-      <!-- inside the Malware Detection & Classification card -->
-<button type="button" class="view-details-btn" data-open-modal="malware">
-  View Details <i class="fa-solid fa-arrow-right"></i>
-</button>
-
-    </article>
-  </div>
-</section>
-<!-- Modal: Malware Detection & Classification -->
-<div id="malware-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Malware Detection & Classification</h2>
-    <h3>Machine Learning • Security Engineering</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Dec 2023</div>
-
-    <div class="modal-body">
-      <p>
-        Developed a robust malware detection and classification system using supervised and unsupervised machine learning techniques, aimed at strengthening real-time threat identification.
-      </p>
-      <p>
-        Collaborated in a team of three to process and analyze <strong>10,000+</strong> malware samples, achieving a <strong>40%</strong> improvement in classification speed and enhanced detection accuracy.
-      </p>
-      <p>
-        Optimized feature selection and model tuning, resulting in a <strong>25%</strong> reduction in false positive rates, thereby increasing trust in automated security workflows.
+      <p class="hero-description">
+        I build <strong>secure-by-design systems</strong> and automate defenses. Blending offensive security insights
+        with practical engineering to create scalable, resilient solutions.
       </p>
 
-      <h4>Skills & Tech</h4>
-      <div class="modal-tech">
-        <span>Python</span><span>Scikit-Learn</span><span>Machine Learning</span><span>Cybersecurity</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Experience -->
-<section id="experience">
-  <h2 class="section-title">Experience</h2>
-
-  <div class="timeline">
-    <!-- Coal India -->
-    <div class="timeline-item" data-modal="coal-india">
-      <span class="timeline-dot"></span>
-      <div class="timeline-content">
-        <span class="timeline-date">Aug 2023 – Sep 2023</span>
-        <h3>Networking Analyst – Vocational Intern</h3>
-        <h4>Coal India Limited</h4>
-        <p>Optimized network performance and improved data transfer protocols for mission-critical operations.</p>
-        <button class="view-details-btn">
-          View details <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- YHills -->
-    <div class="timeline-item" data-modal="yhills">
-      <span class="timeline-dot"></span>
-      <div class="timeline-content">
-        <span class="timeline-date">Dec 2022 – Feb 2023</span>
-        <h3>Junior Cybersecurity Analyst Intern</h3>
-        <h4>YHills</h4>
-        <p>Performed vulnerability assessments, penetration tests, and security analytics using Python and SQL.</p>
-        <button class="view-details-btn">
-          View details <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- VIT-Stellar -->
-    <div class="timeline-item" data-modal="vit-stellar">
-      <span class="timeline-dot"></span>
-      <div class="timeline-content">
-        <span class="timeline-date">Jan 2024 – Jan 2025</span>
-        <h3>Chairperson</h3>
-        <h4>VIT-Stellar Technical Club</h4>
-        <p>Leading one of VIT’s largest technical clubs, organizing 40+ events and driving innovation across tech and cultural domains.</p>
-        <button class="view-details-btn">
-          View details <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Modal: Coal India -->
-<div id="coal-india-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Networking Analyst – Vocational Intern</h2>
-    <h3>Coal India Limited</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Aug 2023 – Sep 2023</div>
-
-    <div class="modal-body">
-      <h4>Key Contributions</h4>
-      <ul>
-        <li>Applied data-driven optimization to network traffic, improving throughput by <strong>20%</strong>.</li>
-        <li>Enhanced data transfer reliability and reduced latency by <strong>45 ms</strong> on critical systems.</li>
-        <li>Developed Python scripts for automated network analysis and visualization.</li>
-      </ul>
-
-      <h4>Tech</h4>
-      <div class="modal-tech">
-        <span>Python</span><span>Linux</span><span>Networking</span><span>Automation</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal: YHills -->
-<div id="yhills-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Junior Cybersecurity Analyst Intern</h2>
-    <h3>YHills</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Dec 2022 – Feb 2023</div>
-
-    <div class="modal-body">
-      <h4>Key Contributions</h4>
-      <ul>
-        <li>Analyzed system logs using Python + SQL, improving threat detection accuracy from <strong>65%</strong> to <strong>85%</strong>.</li>
-        <li>Performed VAPT on four production web apps using Kali Linux, Metasploit, and Burp Suite.</li>
-        <li>Delivered detailed remediation reports reducing average vulnerability exposure time.</li>
-      </ul>
-
-      <h4>Tech</h4>
-      <div class="modal-tech">
-        <span>Kali Linux</span><span>Burp Suite</span><span>Metasploit</span><span>Python</span><span>SQL</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal: VIT-Stellar -->
-<div id="vit-stellar-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Chairperson</h2>
-    <h3>VIT-Stellar Technical Club</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Jan 2024 – Jan 2025</div>
-
-    <div class="modal-body">
-      <h4>Leadership Highlights</h4>
-      <ul>
-        <li>Leading a community of <strong>1500 +</strong> members to promote innovation and technical skill development.</li>
-        <li>Organized <strong>40 +</strong> events — including <strong>21 +</strong> technical workshops, <strong>4 +</strong> large-scale hackathons, and cultural + outreach initiatives.</li>
-        <li>Managed an annual operational budget of ₹ 23 000 and fostered collaborations with campus startups and sponsors.</li>
-        <li>Mentored 20 + core members, improving team efficiency and event execution timelines by 30 %.</li>
-      </ul>
-
-      <h4>Focus Areas</h4>
-      <div class="modal-tech">
-        <span>Leadership</span><span>Event Management</span><span>Public Speaking</span><span>Technical Strategy</span>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Certifications -->
-<section id="certifications" class="certifications">
-  <h2 class="section-title">Certifications</h2>
-
-  <div class="cert-grid">
-    <!-- CEH -->
-    <div class="cert-card featured">
-      <div class="cert-icon"><i class="fa-solid fa-user-shield"></i></div>
-      <h3>Certified Ethical Hacker (CEH)</h3>
-      <p>EC-Council</p>
-      <span class="cert-date">Jan 2024</span><br><br>
-      <button class="view-details-btn" data-open-modal="ceh">
-        View details <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-
-    <!-- Power BI -->
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-chart-column"></i></div>
-      <h3>Microsoft Power BI Desktop for Business Intelligence</h3>
-      <p>Udemy</p>
-      <span class="cert-date">Dec 2024</span><br><br>
-      <button class="view-details-btn" data-open-modal="powerbi">
-        View details <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-
-    <!-- Product Management -->
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-diagram-project"></i></div>
-      <h3>Introduction to Product Management</h3>
-      <p>LinkedIn Learning</p>
-      <span class="cert-date">Mar 2025</span><br><br>
-      <button class="view-details-btn" data-open-modal="prod-mgmt">
-        View details <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-
-    <!-- Risk Management -->
-    <div class="cert-card">
-      <div class="cert-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-      <h3>Finance Foundations: Risk Management</h3>
-      <p>LinkedIn Learning</p>
-      <span class="cert-date">Apr 2025</span><br><br>
-      <button class="view-details-btn" data-open-modal="risk-mgmt">
-        View details <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ====== Certification Modals ====== -->
-
-<!-- CEH -->
-<div id="ceh-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Certified Ethical Hacker (CEH)</h2>
-    <h3>EC-Council</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Jan 2024</div>
-    <div class="modal-body">
-      <p>
-        Validated proficiency in penetration testing, threat analysis, and defensive counter-measures
-        aligned with industry-standard methodologies.
-
-       <h4>Certificate No.- ECC4957031862</h4> 
-      </p>
-      <h4>Key Topics</h4>
-      <div class="modal-tech">
-        <span>Recon & Scanning</span><span>VAPT</span><span>Web App Security</span><span>Post-Exploitation</span>
-      </div>
-      <a class="view-details-btn"
-         href="https://aspen.eccouncil.org/Verify"
-         target="_blank" rel="noopener">
-        Verify Certificate
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Power BI -->
-<div id="powerbi-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Microsoft Power BI Desktop for Business Intelligence</h2>
-    <h3>Udemy</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Dec 2024</div>
-    <div class="modal-body">
-      <p>
-        Hands-on dashboard creation, DAX expressions, and report publishing for analytical workflows.
-      </p>
-      <h4>Skills</h4>
-      <div class="modal-tech">
-        <span>Power BI</span><span>DAX</span><span>Data Modeling</span><span>ETL</span>
-      </div>
-      <a class="view-details-btn"
-         href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-811fe6fb-d31e-44ee-be77-35cae2e34c54.pdf"
-         target="_blank" rel="noopener">
-        Verify Certificate
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Product Management -->
-<div id="prod-mgmt-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Introduction to Product Management</h2>
-    <h3>LinkedIn Learning</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Mar 2025</div>
-    <div class="modal-body">
-      <p>
-        Covered product lifecycle, user research, prioritization, and stakeholder communication.
-      </p>
-      <h4>Skills</h4>
-      <div class="modal-tech">
-        <span>Product Strategy</span><span>Roadmapping</span><span>Communication</span>
-      </div>
-      <a class="view-details-btn" href="#" target="_blank" rel="noopener">
-        Verify Certificate
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Risk Management -->
-<div id="risk-mgmt-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <span class="close" aria-label="Close">&times;</span>
-    <h2>Finance Foundations: Risk Management</h2>
-    <h3>LinkedIn Learning</h3>
-    <div class="modal-date"><i class="fa-regular fa-calendar"></i> Apr 2025</div>
-    <div class="modal-body">
-      <p>
-        Introduced key frameworks for identifying, assessing, and mitigating project and enterprise risk.
-      </p>
-      <h4>Skills</h4>
-      <div class="modal-tech">
-        <span>Risk Analysis</span><span>Controls</span><span>Decision-Making</span>
-      </div>
-      <a class="view-details-btn"
-         href="https://www.linkedin.com/in/aniket-rai-694b5b244/details/certifications/2109249305/multiple-media-viewer/?profileId=ACoAADyu5xAB-a71_weFNFI7VzhbEJppoNlA_6A&treasuryMediaId=1745865972277&type=DOCUMENT"
-         target="_blank" rel="noopener">
-        Verify Certificate
-      </a>
-    </div>
-  </div>
-</div>
-
-
-<!-- Education -->
-<section id="education">
-  <h2 class="section-title">Education</h2>
-
-  <div class="timeline">
-    <!-- VIT -->
-    <div class="timeline-item">
-      <span class="timeline-dot"></span>
-      <div class="timeline-content">
-        <span class="timeline-date">2021 – 2025</span>
-        <h3>B.Tech — Computer Science & Engineering</h3>
-        <h4>Vellore Institute of Technology (VIT), Vellore</h4>
-        <p>Core CS foundation with focus on systems, networks, security, and cloud.</p>
-      </div>
-    </div>
-
-    <!-- Class XII -->
-    <div class="timeline-item">
-      <span class="timeline-dot"></span>
-      <div class="timeline-content">
-        <span class="timeline-date">2020 – 2021</span>
-        <h3>Senior Secondary (XII) — CBSE</h3>
-        <h4>D.A.V. Public School, Bishrampur</h4>
-        <p>Physics, Chemistry, Mathematics, CS.</p>
-      </div>
-    </div>
-
-    <!-- Class X -->
-    <div class="timeline-item">
-      <span class="timeline-dot"></span>
-      <div class="timeline-content">
-        <span class="timeline-date">2018 – 2019</span>
-        <h3>Secondary (X) — CBSE</h3>
-        <h4>D.A.V. Public School, Bishrampur</h4>
-        <p>General curriculum with strong STEM orientation.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Fundamentals & Skills -->
-<section id="fundamentals">
-  <h2 class="section-title">Fundamentals & Skills</h2>
-
-  <div class="skills-grid">
-    <!-- Programming Languages -->
-    <div class="skill-category">
-      <h3><i class="fa-solid fa-code"></i> Programming</h3>
-      <div class="skill-tags">
-        <span>Java (Core)</span><span>Multithreading</span><span>Design Patterns</span>
-        <span>Python</span><span>JavaScript</span><span>SQL</span><span>NoSQL</span>
-      </div>
-    </div>
-
-    <!-- Tools -->
-    <div class="skill-category">
-      <h3><i class="fa-solid fa-toolbox"></i> Tools & Platforms</h3>
-      <div class="skill-tags">
-        <span>Appium</span><span>Pytest</span><span>IBM QRadar</span>
-        <span>Kali Linux</span><span>Metasploit</span><span>Nmap</span>
-        <span>Burp Suite</span><span>Nessus</span><span>GitHub</span>
-        <span>Gradle</span><span>AWS</span><span>GCP</span><span>Edge Computing</span>
-      </div>
-    </div>
-
-    <!-- Methods & Concepts -->
-    <div class="skill-category">
-      <h3><i class="fa-solid fa-gears"></i> Methods & Concepts</h3>
-      <div class="skill-tags">
-        <span>Agile / Scrum</span><span>CI/CD</span><span>DevOps</span>
-        <span>AI/ML</span><span>CluStream</span><span>Page-Hinkley</span>
-        <span>Threat Modeling</span><span>VAPT</span>
-      </div>
-    </div>
-
-    <!-- Coursework -->
-    <div class="skill-category">
-      <h3><i class="fa-solid fa-graduation-cap"></i> Coursework</h3>
-      <div class="skill-tags">
-        <span>Data Structures & Algorithms</span><span>Operating Systems</span>
-        <span>DBMS</span><span>Computer Networks</span><span>Cloud Computing</span>
-        <span>Software Engineering</span>
-      </div>
-    </div>
-
-    <!-- Soft Skills -->
-    <div class="skill-category">
-      <h3><i class="fa-solid fa-people-group"></i> Soft Skills</h3>
-      <div class="skill-tags">
-        <span>Leadership</span><span>Team Management</span><span>Public Speaking</span>
-        <span>Communication</span><span>Mentoring</span><span>Problem Solving</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p class="contact-subtitle">Got an opportunity or a question? Let’s talk.</p>
-
-    <div class="contact-content">
-      <!-- Info -->
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fa-solid fa-envelope"></i>
-          <div>
-            <h4>Email</h4>
-            <a href="mailto:aniiket2004@gmail.com">aniiket2004@gmail.com</a>
-          </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>10k+</h3>
+          <p>Malware Scanned</p>
         </div>
-
-        <div class="contact-item">
-          <i class="fa-brands fa-github"></i>
-          <div>
-            <h4>GitHub</h4>
-            <a href="https://github.com/Aniket-Rai-afk" target="_blank" rel="noopener">github.com/Aniket-Rai-afk</a>
-          </div>
+        <div class="stat">
+          <h3>4+</h3>
+          <p>Major Projects</p>
         </div>
-
-        <div class="contact-item">
-          <i class="fa-brands fa-linkedin"></i>
-          <div>
-            <h4>LinkedIn</h4>
-            <a href="#" target="_blank" rel="noopener">linkedin.com/in/aniket-rai</a>
-          </div>
+        <div class="stat">
+          <h3>20%</h3>
+          <p>Network Boost</p>
         </div>
-
-        <div class="social-links">
-          <a href="mailto:aniiket2004@gmail.com" aria-label="Email"><i class="fa-solid fa-at"></i></a>
-          <a href="https://github.com/Aniket-Rai-afk" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="stat">
+          <h3>1.5k+</h3>
+          <p>Community Led</p>
         </div>
       </div>
 
-      <!-- Form -->
-      <form id="contact-form" class="contact-form" novalidate>
-        <div class="form-group">
-          <input id="name" name="name" type="text" placeholder="Your name" required />
-        </div>
-        <div class="form-group">
-          <input id="email" name="email" type="email" placeholder="Your email" required />
-        </div>
-        <div class="form-group">
-          <input id="subject" name="subject" type="text" placeholder="Subject" required />
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" placeholder="Your message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <div id="form-status" aria-live="polite"></div>
-      </form>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-image reveal delay-200">
+      <div class="hero-shape-bg"></div>
+      <div class="image-wrapper">
+        <img src="assets/profile.png" alt="Aniket Rai" class="profile-pic" loading="lazy">
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <div class="about-content reveal delay-100">
+        <div class="about-text">
+          <p>
+            I’m a <strong>Security Engineer</strong> and <strong>Full-Stack Developer</strong> who thrives at the
+            intersection of code and security. With deep roots in <strong>Java and Python</strong> and a passion for
+            <strong>Networking</strong>, I don't just build systems; I ensure they can withstand the unpredictable.
+          </p>
+          <p>
+            Currently, I serve as a <strong>Cybersecurity Engineer at THQ</strong>, orchestrating security operations,
+            conducting VAPT, and automating threat hunters (Sophos, Fortinet, AWS WAF). My goal is simple: make
+            technology safer, faster, and smarter.
+          </p>
+          <p>
+            I also lead <strong>VIT-Stellar</strong>, a technical community of over 1500 members, where I foster
+            innovation and mentorship.
+          </p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4>Security Engineering</h4>
+              <p>Threat Modeling, VAPT, DevSecOps, Cloud Security.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <h4>Development</h4>
+              <p>Full-Stack (MERN), Python, Java, Secure Coding.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
+            <div>
+              <h4>Infrastructure</h4>
+              <p>Network Optimization, System Hardening, Architecture.</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
+            <div>
+              <h4>Leadership</h4>
+              <p>Strategy, Mentorship, Cross-functional Collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal delay-100">
+          <div class="card-header">
+            <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <span class="status-badge ongoing">Ongoing</span>
+          </div>
+          <h3>IoT Anomaly Detection</h3>
+          <p>Real-time anomaly detection system for smart home IoT networks using CluStream & Page-Hinkley algorithms.
+          </p>
+          <div class="project-tech">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>IoT</span>
+          </div>
+          <a class="project-link" href="https://github.com/Aniket-Rai-afk/Anomaly-Detection-in-Smart-Home-IoT-Networks"
+            target="_blank">
+            View Repo <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal delay-200">
+          <div class="card-header">
+            <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span class="status-badge completed">Completed</span>
+          </div>
+          <h3>File Integrity Monitor</h3>
+          <p>Cross-platform security tool using 9-point cryptographic checks to ensure file system integrity for 50+
+            users.</p>
+          <div class="project-tech">
+            <span>Bash</span><span>Linux</span><span>Security</span>
+          </div>
+          <div class="metrics">
+            <span><small>↓ 70%</small> Audit Time</span>
+          </div>
+          <a class="project-link"
+            href="https://github.com/Aniket-Rai-afk/PROACTIVE-DETECTION-OF-UNAUTHORIZED-SYSTEM-MODIFICATIONS-USING-INTEGRITY-CHECKING"
+            target="_blank">
+            View Project <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal delay-300">
+          <div class="card-header">
+            <div class="project-icon"><i class="fa-solid fa-bug-slash"></i></div>
+            <span class="status-badge completed">Completed</span>
+          </div>
+          <h3>Malware Classification ML</h3>
+          <p>Machine Learning model detecting malware with 95% accuracy across 10,000+ samples.</p>
+          <div class="project-tech">
+            <span>Python</span><span>scikit-learn</span><span>ML</span>
+          </div>
+          <div class="metrics">
+            <span><small>95%</small> Accuracy</span>
+            <span><small>↑ 40%</small> Speed</span>
+          </div>
+          <button class="view-details-btn" data-open-modal="malware">
+            View Details <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Malware Modal -->
+  <div id="malware-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" aria-label="Close">&times;</span>
+      <h2>Malware Detection & Classification</h2>
+      <h3>Machine Learning • Security Engineering</h3>
+      <div class="modal-date"><i class="fa-regular fa-calendar"></i> Dec 2023</div>
+      <div class="modal-body">
+        <p>Built a robust malware detection system using supervised and unsupervised learning to identify threats in
+          real-time.</p>
+        <ul>
+          <li>Analyzed <strong>10,000+</strong> samples, achieving <strong>95% accuracy</strong>.</li>
+          <li> improved classification speed by <strong>40%</strong>.</li>
+          <li>Reduced false positives by <strong>25%</strong> through feature optimization.</li>
+        </ul>
+        <h4>Stack</h4>
+        <div class="modal-tech">
+          <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Cybersecurity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container container-narrow">
+      <h2 class="section-title reveal">Experience</h2>
+      <div class="timeline">
+
+        <!-- THQ -->
+        <div class="timeline-item reveal delay-100 left">
+          <div class="timeline-content" data-modal="thq">
+            <span class="date">Nov 2025 – Present</span>
+            <h3>Cybersecurity Engineer</h3>
+            <h4>THQ</h4>
+            <p>End-to-end security operations, VAPT, and threat automation.</p>
+            <span class="read-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- VIT Stellar -->
+        <div class="timeline-item reveal delay-200 right">
+          <div class="timeline-content" data-modal="vit-stellar">
+            <span class="date">Jan 2024 – Jan 2025</span>
+            <h3>Chairperson</h3>
+            <h4>VIT-Stellar Technical Club</h4>
+            <p>Leading 1500+ members, organizing hackathons and workshops.</p>
+            <span class="read-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Coal India -->
+        <div class="timeline-item reveal delay-300 left">
+          <div class="timeline-content" data-modal="coal-india">
+            <span class="date">Aug 2023 – Sep 2023</span>
+            <h3>Networking Analyst Intern</h3>
+            <h4>Coal India Limited</h4>
+            <p>Network optimization and critical infrastructure performance.</p>
+            <span class="read-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- YHills -->
+        <div class="timeline-item reveal delay-400 right">
+          <div class="timeline-content" data-modal="yhills">
+            <span class="date">Dec 2022 – Feb 2023</span>
+            <h3>Jr. Cybersecurity Analyst Intern</h3>
+            <h4>YHills</h4>
+            <p>Vulnerability assessment and penetration testing.</p>
+            <span class="read-more">Read more <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Modals -->
+  <div id="thq-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Cybersecurity Engineer</h2>
+      <h3>THQ</h3>
+      <div class="modal-date">Nov 2025 – Present</div>
+      <div class="modal-body">
+        <ul>
+          <li>Managing security ops across enterprise environments (Sophos, Fortinet, Palo Alto, AWS WAF).</li>
+          <li>Performing VAPT and cloud security audits, reducing attack surface.</li>
+          <li>Implementing automated threat detection via Python & DevSecOps.</li>
+        </ul>
+        <div class="modal-tech">
+          <span>Sophos</span><span>Fortinet</span><span>AWS WAF</span><span>Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="coal-india-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Networking Analyst Intern</h2>
+      <h3>Coal India Limited</h3>
+      <div class="modal-date">Aug 2023 – Sep 2023</div>
+      <div class="modal-body">
+        <ul>
+          <li>Improved network throughput by <strong>20%</strong> via data-driven optimization.</li>
+          <li>Reduced latency by <strong>45ms</strong> on critical systems.</li>
+          <li>Automated network analysis using Python.</li>
+        </ul>
+        <div class="modal-tech">
+          <span>Networking</span><span>Python</span><span>Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="yhills-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Jr. Cybersecurity Analyst Intern</h2>
+      <h3>YHills</h3>
+      <div class="modal-date">Dec 2022 – Feb 2023</div>
+      <div class="modal-body">
+        <ul>
+          <li>Improved threat detection accuracy from 65% to 85% analyzing logs with Python/SQL.</li>
+          <li>Performed VAPT on 4 production web apps using Kali Linux & Burp Suite.</li>
+        </ul>
+        <div class="modal-tech">
+          <span>Kali Linux</span><span>Burp Suite</span><span>SQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="vit-stellar-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Chairperson</h2>
+      <h3>VIT-Stellar</h3>
+      <div class="modal-date">Jan 2024 – Jan 2025</div>
+      <div class="modal-body">
+        <ul>
+          <li>Led 1500+ members community.</li>
+          <li>Organized 45+ events including hackathons.</li>
+          <li>Mentored 20+ core members.</li>
+        </ul>
+        <div class="modal-tech">
+          <span>Leadership</span><span>Management</span><span>Public Speaking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <section id="fundamentals" class="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Technical Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-category reveal delay-100">
+          <h3><i class="fa-solid fa-laptop-code"></i> Engineering</h3>
+          <div class="tags">
+            <span>Java
+              (Core)</span><span>Python</span><span>JavaScript</span><span>SQL</span><span>React</span><span>Node.js</span>
+          </div>
+        </div>
+        <div class="skill-category reveal delay-200">
+          <h3><i class="fa-solid fa-shield-virus"></i> Security & Ops</h3>
+          <div class="tags">
+            <span>Sophos</span><span>Fortinet</span><span>Palo Alto</span><span>AWS WAF</span>
+            <span>QRadar</span><span>Kali Linux</span><span>Metasploit</span><span>Burp Suite</span>
+            <span>Docker</span><span>AWS</span>
+          </div>
+        </div>
+        <div class="skill-category reveal delay-300">
+          <h3><i class="fa-solid fa-brain"></i> Concepts</h3>
+          <div class="tags">
+            <span>DevSecOps</span><span>CI/CD</span><span>AI Security</span><span>Threat
+              Modeling</span><span>VAPT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="certifications">
+    <div class="container">
+      <h2 class="section-title reveal">Certifications</h2>
+      <div class="cert-layout">
+        <div class="cert-item reveal delay-100">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <h4>Certified Ethical Hacker (CEH)</h4>
+            <p>EC-Council (Jan 2024)</p>
+          </div>
+          <a href="#" class="cert-link" data-open-modal="ceh">Verify</a>
+        </div>
+        <div class="cert-item reveal delay-200">
+          <i class="fa-solid fa-chart-bar"></i>
+          <div>
+            <h4>Microsoft Power BI</h4>
+            <p>Udemy (Dec 2024)</p>
+          </div>
+          <a href="#" class="cert-link" data-open-modal="powerbi">Verify</a>
+        </div>
+        <div class="cert-item reveal delay-300">
+          <i class="fa-solid fa-tasks"></i>
+          <div>
+            <h4>Product Management</h4>
+            <p>LinkedIn (Mar 2025)</p>
+          </div>
+        </div>
+        <div class="cert-item reveal delay-400">
+          <i class="fa-solid fa-calculator"></i>
+          <div>
+            <h4>Risk Management</h4>
+            <p>LinkedIn (Apr 2025)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cert Modals (CEH & PowerBI) -->
+  <div id="ceh-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Certified Ethical Hacker</h2>
+      <p>Proficiency in penetration testing and threat analysis.</p>
+      <p><strong>Certificate No:</strong> ECC4957031862</p>
+      <a class="view-details-btn" href="https://aspen.eccouncil.org/Verify" target="_blank">Verify</a>
+    </div>
+  </div>
+  <div id="powerbi-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Power BI Desktop</h2>
+      <p>Dashboard creation, DAX, and reporting.</p>
+      <a class="view-details-btn"
+        href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-811fe6fb-d31e-44ee-be77-35cae2e34c54.pdf"
+        target="_blank">Verify</a>
+    </div>
+  </div>
+
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Let's Connect</h2>
+      <div class="contact-wrapper reveal delay-100">
+        <div class="contact-details">
+          <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+          <div class="contact-row">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:aniiket2004@gmail.com">aniiket2004@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/aniket-rai-694b5b244/" target="_blank">LinkedIn Profile</a>
+          </div>
+          <div class="contact-row">
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/Aniket-Rai-afk" target="_blank">GitHub Profile</a>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Message" rows="5" required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <p>© <span id="year"></span> Aniket Rai. Built with passion <i class="fa-solid fa-heart"></i></p>
-    <p><a class="nav-link" href="#top">Back to top</a></p>
+    <p>© <span id="year"></span> Aniket Rai. Crafted with <i class="fa-solid fa-code"></i> & <i
+        class="fa-solid fa-shield-halved"></i></p>
   </footer>
 
-  <!-- EmailJS SDK (needed by your JS) -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <!-- NOTE: Your script uses emailjs.init(...) and emailjs.send(...). Make sure your keys/IDs are quoted strings in script.js. -->
-<!-- Custom Mouse Circle -->
-<div class="cursor-dot"></div>
-
-  <!-- Your JS -->
   <script src="script.js"></script>
-
-  <!-- Tiny helper: current year -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Intersection Observer for Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Midnight Blizzard Breach — Identity as the New Attack Surface | Aniket Rai</title>
+    <meta name="description"
+        content="Technical analysis of the Midnight Blizzard Microsoft breach: how identity tokens were forged and why identity is the new perimeter.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="When Identity Became the New Attack Surface — The Midnight Blizzard Breach">
+    <meta property="og:description"
+        content="They didn't break a firewall or exploit a zero-day. They forged an identity. A breakdown of the Microsoft Midnight Blizzard incident.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2024-10-27">
+    <meta property="article:author" content="Aniket Rai">
+    <meta property="article:tag" content="Identity Security">
+    <meta property="article:tag" content="Cloud Security">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&family=Fira+Code:wght@400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../blog.css">
+</head>
+
+<body class="blog-page">
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../assets/logo.png" alt="Aniket Rai" class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li><a class="nav-link active" href="../blog.html">Blog</a></li>
+                    <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="blog-tag">Identity Security</span>
+                <span><i class="fa-regular fa-calendar"></i> Oct 27, 2024</span>
+                <span id="read-time"><i class="fa-regular fa-clock"></i> 7 min read</span>
+            </div>
+            <h1 class="article-title">When Identity Became the New Attack Surface — My Technical Breakdown of the
+                Midnight Blizzard Microsoft Breach</h1>
+        </header>
+
+        <!-- TOC -->
+        <nav class="toc">
+            <h4>Table of Contents</h4>
+            <ul id="toc-list"></ul>
+        </nav>
+
+        <div class="article-content">
+            <p>In cybersecurity, we spend most of our time focused on vulnerabilities in software, misconfigurations in
+                cloud infrastructure, or social-engineering attacks that trick people. But the breach I studied recently
+                — carried out by the threat group <strong>Midnight Blizzard</strong> — showed something different. It
+                proved that sometimes the weakest component isn’t code, infrastructure, or humans. <strong>It’s
+                    identity.</strong></p>
+
+            <p>This attack made me rethink how deeply the industry depends on tokens and authentication systems we
+                rarely question. Midnight Blizzard didn’t break through a firewall. They didn’t exploit a zero-day. They
+                didn’t brute-force passwords. They breached Microsoft — one of the most security-focused companies in
+                the world — through a compromised identity token.</p>
+
+            <p>And from that single foothold, they accessed email inboxes, executive accounts, and internal systems.
+                Studying this incident forced me to understand the mechanics of how identity can silently become the
+                most valuable attack vector in the world.</p>
+
+            <h2>What I Learned Actually Happened</h2>
+            <p>The breach began when attackers obtained a Microsoft account (MSA) consumer signing key. That key is used
+                to sign security tokens that grant access across Microsoft services. With that key, Midnight Blizzard
+                was able to forge Outlook Web Access tokens and authenticate into corporate cloud systems — even without
+                knowing passwords or bypassing MFA.</p>
+
+            <p>What stunned me was this: <strong>the threat actor didn’t break identity verification — they impersonated
+                    a legitimate identity so perfectly that the system treated them as internal staff.</strong></p>
+
+            <p>The issue wasn’t that Microsoft didn’t have strong identity. The issue was that identity itself had
+                become powerful enough to bypass everything else.</p>
+
+            <h2>Why the Attack Went Undetected for So Long</h2>
+            <p>When I read the timeline, one thing became clear: the attackers did not rush. They took their time,
+                quietly exploring internal email systems, executive mailboxes, and sensitive correspondence. And the
+                reason they weren’t caught immediately was painfully simple:</p>
+
+            <blockquote>Everything they did looked legitimate.</blockquote>
+
+            <p>The forged tokens didn’t set off alarms because the logs showed correctly authenticated users. Access
+                patterns looked “normal,” even though the identity behind them wasn’t. It reminded me that logging is
+                only as useful as the assumptions behind it. If your system assumes identity is always honest,
+                everything downstream inherits that assumption.</p>
+
+            <h2>The Part That Taught Me the Most</h2>
+            <p>What fascinated me the most wasn’t the breach — it was how Microsoft traced it back. The forensics went
+                through token-signing logs, certificate chains, metadata validation flows, and endpoint telemetry until
+                the security team realized the shocking root cause:</p>
+
+            <p>A <strong>consumer signing key</strong> — meant for personal Microsoft accounts — could sign enterprise
+                cloud tokens under specific circumstances.</p>
+
+            <p>That tiny, technical loophole — something only a handful of people in the world would understand — opened
+                a door to one of the biggest names in tech. It wasn’t incompetence. It was the unavoidable complexity of
+                identity infrastructure at global scale.</p>
+
+            <h2>Lessons I’m Taking Forward</h2>
+            <p>The most lasting thing I learned is that perimeter security is not disappearing — it has moved. Today the
+                perimeter isn’t the firewall — it's identity.</p>
+
+            <p>If a signing key can impersonate anyone, and access controls fully trust that signature, then identity
+                becomes the single point of success or failure for the entire organization. Midnight Blizzard didn’t
+                break systems; they inherited trust.</p>
+
+            <ul>
+                <li><strong>MFA isn’t enough</strong> if someone can mint a token that bypasses it.</li>
+                <li><strong>“Zero Trust” is meaningless</strong> if the system trusts a forged identity as zero-risk.
+                </li>
+                <li>Hardening infrastructure doesn’t protect you if identity infrastructure is weaker.</li>
+            </ul>
+
+            <p>Modern security isn’t about keeping bad actors out — it’s about ensuring that access can never be
+                silently counterfeited.</p>
+
+            <h2>Why I Wanted to Write This</h2>
+            <p>This breach didn’t interest me because it was dramatic or high-profile. It interested me because it
+                represents where cybersecurity is heading. Ten years ago, an attack like this wasn’t mainstream. Today,
+                identity infrastructure is powerful enough — and complex enough — that it can become the ultimate attack
+                vector.</p>
+
+            <p>Studying Midnight Blizzard’s breach taught me that security has a center of gravity, and right now, that
+                center is identity. If we don’t protect that layer with the same paranoia we apply to networks,
+                endpoints, or critical services, incidents like this won’t be rare — they’ll be normal.</p>
+
+            <div class="references">
+                <h3>References</h3>
+                <ul>
+                    <li><a href="#" target="_blank">Microsoft Security Response Center — Midnight Blizzard breach
+                            disclosures</a></li>
+                    <li><a href="#" target="_blank">Post-incident technical breakdowns from Microsoft and industry
+                            analysts</a></li>
+                    <li><a href="#" target="_blank">Token-forgery attack model discussions in modern identity security
+                            research</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Aniket Rai. <a href="../index.html">Back to Portfolio</a></p>
+    </footer>
+
+    <script src="../blog.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Mobile Toggle Fix
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
